@@ -91,23 +91,23 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/admin/post/{id}', [AdminPostController::class, 'update'])->name('admin.update');
     Route::post('/admin/post/{id}/update', [AdminPostController::class, 'update_post'])->name('admin.update_post');
 
-    Route::get('/admin/member', [AdminUserController::class, 'get'])->name('admin.member');
+    Route::get('/admin/member', [AdminUserController::class, 'get'])->name('admin.member.index');
     Route::get('/admin/member/{id}', [AdminUserController::class, 'update'])->name('admin.member');
     Route::post('admin/member/{id}/update', [AdminUserController::class, 'update_user'])->name('admin.update_user');
 
-    Route::get('/admin/event', [AdminEventController::class, 'get'])->name('admin.create');
+    Route::get('/admin/event', [AdminEventController::class, 'get'])->name('admin.create.index');
     Route::get('/admin/event/create', [AdminEventController::class, 'create'])->name('admin.create');
     Route::post('/admin/event/create', [AdminEventController::class, 'create_event'])->name('admin.create_event');
     Route::get('/admin/event/{id}', [AdminEventController::class, 'update'])->name('admin.update');
     Route::post('/admin/event/{id}/update', [AdminEventController::class, 'update_event'])->name('admin.update_event');
 
-    Route::get('/admin/alumni', [AdminAlumniController::class, 'get'])->name('admin.alumni');
+    Route::get('/admin/alumni', [AdminAlumniController::class, 'get'])->name('admin.alumni.index');
     Route::post('/admin/alumni/{id}/accept', [AdminAlumniController::class, 'accept'])->name('admin.accept_alumni');
     Route::post('/admin/alumni/{id}/reject', [AdminAlumniController::class, 'reject'])->name('admin.reject_alumni');
     Route::get('/admin/alumni/{id}', [AdminAlumniController::class, 'update'])->name('admin.alumni');
     Route::post('/admin/alumni/{id}/update', [AdminAlumniController::class, 'update_alumni'])->name('admin.update_alumni');
 
-    Route::get('/admin/contact', [AdminContactController::class, 'get'])->name('admin.contact');
+    Route::get('/admin/contact', [AdminContactController::class, 'get'])->name('admin.contact.index');
     Route::get('/admin/contact/{id}', [AdminContactController::class, 'update'])->name('admin.contact');
     Route::post('/admin/contact/{id}/update', [AdminContactController::class, 'update_contact'])->name('admin.update_contact');
 });
