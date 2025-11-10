@@ -86,9 +86,9 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/admin', [AdminDashboardController::class, 'get'])->name('admin.dashboard');
 
     Route::get('/admin/post', [AdminPostController::class, 'get'])->name('admin.post');
-    Route::get('/admin/post/create', [AdminPostController::class, 'create'])->name('admin.create');
+    Route::get('/admin/post/create', [AdminPostController::class, 'create'])->name('admin.post.create');
     Route::post('/admin/post/create', [AdminPostController::class, 'create_post'])->name('admin.create_post');
-    Route::get('/admin/post/{id}', [AdminPostController::class, 'update'])->name('admin.update');
+    Route::get('/admin/post/{id}', [AdminPostController::class, 'update'])->name('admin.post.update');
     Route::post('/admin/post/{id}/update', [AdminPostController::class, 'update_post'])->name('admin.update_post');
 
     Route::get('/admin/member', [AdminUserController::class, 'get'])->name('admin.member.index');
@@ -96,9 +96,9 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::post('admin/member/{id}/update', [AdminUserController::class, 'update_user'])->name('admin.update_user');
 
     Route::get('/admin/event', [AdminEventController::class, 'get'])->name('admin.create.index');
-    Route::get('/admin/event/create', [AdminEventController::class, 'create'])->name('admin.create');
+    Route::get('/admin/event/create', [AdminEventController::class, 'create'])->name('admin.event.create');
     Route::post('/admin/event/create', [AdminEventController::class, 'create_event'])->name('admin.create_event');
-    Route::get('/admin/event/{id}', [AdminEventController::class, 'update'])->name('admin.update');
+    Route::get('/admin/event/{id}', [AdminEventController::class, 'update'])->name('admin.event.update');
     Route::post('/admin/event/{id}/update', [AdminEventController::class, 'update_event'])->name('admin.update_event');
 
     Route::get('/admin/alumni', [AdminAlumniController::class, 'get'])->name('admin.alumni.index');
